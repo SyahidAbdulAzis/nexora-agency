@@ -141,7 +141,7 @@ export default function CreateBlog() {
                     placeholder="e.g. SEO, brand, landing page"
                     className="w-full rounded-lg border-2 border-[#DDD5CC] bg-white px-4 py-3.5 text-[clamp(0.9375rem,1.2vw+0.5rem,1.125rem)] outline-none transition-colors focus:border-[#292929] focus:ring-0"
                     style={{ fontFamily, color: '#292929' }}
-                    value={Array.isArray(values.tags) ? values.tags.join(', ') : (values.tags as string ?? '')}
+                    value={Array.isArray(values.tags) ? values.tags.join(', ') : (values.tags != null ? String(values.tags) : '')}
                     onChange={(e: React.ChangeEvent<HTMLInputElement>) => setFieldValue('tags', parseTagsInput(e.target.value))}
                   />
                   <p className="mt-1.5 text-[clamp(0.8125rem,1vw+0.35rem,1rem)] text-[#888]">Comma-separated.</p>
